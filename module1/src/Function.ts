@@ -1,3 +1,4 @@
+{
 //Learning Functions in Typescript
 
 //  Normal Function
@@ -31,3 +32,5 @@ const poorUser = {
 const array : number[] = [1,2,3,4,5]
 
 const newArray : number [] = array.map(((element : number) : number=> element*element))
+
+}
