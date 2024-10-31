@@ -22,7 +22,7 @@
 
     const mentorList  = {
         ...mentor1,
-        ... mentor2
+        ...mentor2
     }
 
 
