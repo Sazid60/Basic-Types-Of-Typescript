@@ -53,6 +53,34 @@
     }
 
 
+    // interface and types in array and objects
+
+    // js --> object , array --> object, function-->object
+
+    type Roll1 = number[];
+    // types are better to use for array
+
+    interface Roll2 {
+        [index : number] : number
+    }
+
+    const rollNumber1: Roll1 = [1,2,3]
+
+    const rollNumber2 : Roll2 = [1,2,3]
+
+
+// interface in function 
+
+type Add1 = (num1 : number, num2:number) => number
+// types are better to use for functions
+
+interface Add2 {
+    (num1 : number, num2:number) : number
+}
+
+const add1 : Add1 = (num1, num2) => num1 + num2
+
+
 
 
 }
