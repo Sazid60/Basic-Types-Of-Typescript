@@ -50,4 +50,28 @@
     const manush : GenericTuple<string, string> = ['x-men', 'x-women']
 
     const userWithId : GenericTuple<number, {name:string, email:string}> = [123, {name:'saziid', email :'s@gmail.com'}]
+
+
+    // Generics with interface
+
+    interface User {
+        name: string;
+        age : number;
+    }  // eta type diyeo korte pari
+    
+        // generic array of object
+        const user1 : GenericArray<User>= [
+            {
+                name: "sazid",
+                age : 100,
+            },
+            {
+                name: "sazid",
+                age : 100,
+            },
+            {
+                name: "sazid",
+                age : 100,
+            },
+        ]
 }
