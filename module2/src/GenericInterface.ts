@@ -1,6 +1,7 @@
 {
     // Generic Interface
 
+    // eta obosso type diyeo kora jay 
     interface Developer<T, X = null> {
         name: string;
         computer : {
