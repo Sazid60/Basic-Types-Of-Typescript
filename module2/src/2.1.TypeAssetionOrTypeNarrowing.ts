@@ -40,7 +40,7 @@
     try {
 
     }catch(error){
-        console.log((error as CustomError).message)
+        console.log((error as CustomError).message) //eta korle auto suggestion dibe message ta
     }
 
 

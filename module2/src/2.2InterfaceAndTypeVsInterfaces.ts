@@ -1,5 +1,6 @@
 {
 
+    // interface and type vs interface
     type User1 = {
         name: string;
         age: number;
@@ -11,6 +12,7 @@
     }
 
     type userWithRole1 = User1 & { role: string }
+    // intersection types
 
     type userWithRole2 = User2 & { role: string }
 
