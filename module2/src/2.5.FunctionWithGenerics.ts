@@ -35,6 +35,8 @@
     }
     const res5 = createArrayWithGenericTuple <string,User>('Bangladesh', {id:123, name:'sazid'})
 
+
+    // adding something new to an object
     const addCourseToStudent = <T>(student :T)=>{
         const course :string = "Next Level Web Dev"
 
