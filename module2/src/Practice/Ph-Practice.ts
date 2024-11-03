@@ -89,7 +89,7 @@
         maritalStatus: 'single' | 'married' | 'divorced' | 'widowed'; // Optional refinement
         friends: string[];
     };
-    
+
     const john: Person = {
         name: "John Doe",
         address: "123 Main St, Anytown, USA",
@@ -104,9 +104,9 @@
         maritalStatus: "married",
         friends: ["Alice", "Bob", "Charlie"]
     };
-    
+
     console.log(john);
-    
+
     // ---
 
     // ### Task 4: Union and Intersection Types
@@ -119,6 +119,27 @@
     // - Create:
     //   - A type that is a **union** of `Book` and `Magazine`.
     //   - A type that is an **intersection** of `Book` and `Magazine`.
+
+    interface Book {
+        name: string
+    }
+    interface Magazine {
+        copy: number
+    }
+    // Union Type
+    type Publication = Book | Magazine;
+
+    // Intersection Type
+    type CompletePublication = Book & Magazine;
+
+    // Example usage
+    const myBook: Publication = { name: "The Great Gatsby" }; // This is a Book
+    const myMagazine: Publication = { name: "National Geographic", copy: 120 }; // This is a Magazine
+
+    const myCompletePublication: CompletePublication = {
+        name: "Sample Title",
+        copy: 1
+    }; // This object satisfies both Book and Magazine properties
 
     // ---
 
@@ -135,6 +156,14 @@
     //     - Input: `"hello"`
     //     - Output: `"olleh"`
 
+    const reverseString = (x: string): string => {
+        return x.split('').reverse().join('');
+    }
+    
+    // Example usage:
+    const reversed = reverseString('Hello');
+    console.log(reversed); // Output: "olleH"
+    
     // ---
 
     // ### Task 6: Spread and Rest Operators, Destructuring
