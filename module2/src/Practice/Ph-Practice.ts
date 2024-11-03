@@ -159,11 +159,11 @@
     const reverseString = (x: string): string => {
         return x.split('').reverse().join('');
     }
-    
+
     // Example usage:
     const reversed = reverseString('Hello');
     console.log(reversed); // Output: "olleH"
-    
+
     // ---
 
     // ### Task 6: Spread and Rest Operators, Destructuring
@@ -173,6 +173,15 @@
     // **Instructions**:
 
     // - Create a function that takes multiple numeric arguments (using the rest operator) and returns the sum of all arguments.
+
+    const sum = (...numbers: number[]): number => {
+        return numbers.reduce((total, num) => total + num, 0);
+    }
+
+    // Example usage:
+    console.log(sum(1, 2, 3, 4)); // Output: 10
+    console.log(sum(5, 10, 15)); // Output: 30
+    console.log(sum()); // Output: 0 (no arguments)
 
     // ---
 
@@ -187,6 +196,16 @@
     //   - Return the length if the input is a string.
     //   - Return the square if the input is a number.
 
+    const oho = (x: string | number): number | undefined => {
+        if (typeof x === "string") {
+            return x.length
+        } else if (typeof x === "number") {
+            return x * x
+        }
+    }
+
+    const res1 = oho('sazid') as number
+    const res2 = oho('sazid') as number
     // ---
 
     // ### Task 8: Intersection Types
@@ -199,6 +218,32 @@
     //   - `User` with properties `name` and `email`
     //   - `Admin` with property `adminLevel`
     // - Write a function `describeAdmin(user: AdminUser): string` that returns a description of the admin user.
+
+    type User = {
+        name: string;
+        email: string;
+    }
+
+    type Admin = {
+        adminLevel: string;
+    }
+
+    // Create an intersection type for AdminUser
+    type AdminUser = User & Admin;
+
+    // Function to describe the admin user
+    const describeAdmin = (user: AdminUser): string => {
+        return `Admin User: ${user.name}, Email: ${user.email}, Admin Level: ${user.adminLevel}`;
+    }
+
+    // Example usage
+    const adminUser: AdminUser = {
+        name: "Alice",
+        email: "alice@example.com",
+        adminLevel: "super"
+    };
+
+    console.log(describeAdmin(adminUser)); // Output: Admin User: Alice, Email: alice@example.com, Admin Level: super
 
     // ---
 
