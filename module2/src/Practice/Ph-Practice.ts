@@ -255,6 +255,42 @@
 
     // - Write a function `getEmployeeCity(employee)` that safely retrieves the city of an employee from a nested object using optional chaining.
 
+    interface Employee<X, Y> {
+        id: number;
+        name: string;
+        address: X;
+        contact: Y;
+    }
+    const getEmployeeCity = (employee: Employee<Address, Contact>): string => {
+        return employee?.address?.city
+    }
+
+    interface Address {
+        street: string;
+        city: string;
+        state: string
+    }
+    interface Contact {
+        email: string;
+        phone: string
+    }
+
+    const employee = {
+        id: 1,
+        name: "John Doe",
+        address: {
+            street: "123 Main St",
+            city: "Springfield",
+            state: "IL"
+        },
+        contact: {
+            email: "johndoe@example.com",
+            phone: "123-456-7890"
+        }
+    };
+    // Example usage
+    const city = getEmployeeCity(employee);
+    console.log(city); // Output: Springfield
     // ---
 
     // ### Task 10: Nullish Coalescing
