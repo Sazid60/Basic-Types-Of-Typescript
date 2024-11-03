@@ -26,6 +26,9 @@
 
     type AreaString = {
         [key in keyof AreaNumber]: string
+        // keyof AreaNumber generates a union of all keys in AreaNumber ("height" | "width").
+        // [key in keyof AreaNumber] creates a new type by iterating over each key in AreaNumber.
+        // For each key, the mapped type assigns a string type, so both height and width become string.
     }
 
 
@@ -41,11 +44,12 @@
 
     type AreaString1<T> = {
         [key in keyof T]: T[key] // eta lookup kore ber korbe
+        //// This will look up each key in T and use its original type
     }
 
-    const area1 : AreaString1 <{height :string, width:number}> = {
+    const area1: AreaString1<{ height: string, width: number }> = {
         height: "100",
-        width:100
+        width: 100
     }
 
 }

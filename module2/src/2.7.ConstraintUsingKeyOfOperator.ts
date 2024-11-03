@@ -1,6 +1,8 @@
 {
     // generic constraint with keyof operator 
 
+    // jokhon utility diye kisu akta mandatory kore dite hobe tokhon eta use korbo
+
     type Vehicle = {
         bike: string,
         car: string;
@@ -17,9 +19,10 @@
 
 
     // another example
-
-    const getPropertyValue =<X, Y extends keyof X>(obj: X, key: Y) => {
-        return obj[key]
+                                // mane Y er vitore X er key gula rakhbe
+    const getPropertyValue =<X, Y extends keyof X>(objs: X, key: Y) => {
+        // keyof X represents all the keys of the type X (i.e., it produces a union of the keys of X)
+        return objs[key]
     }
 
     const user = {

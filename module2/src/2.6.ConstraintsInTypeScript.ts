@@ -2,7 +2,7 @@
     // constrains
     // adding something new to an object
     const addCourseToStudent = <T extends { id: number; name: string; email: string; devType:string }>(student: T) => {
-        // this means the mentioned property should be present
+        // this means the mentioned property should be present do not care about others
         const course = "Next Level Web Dev"
 
         return {

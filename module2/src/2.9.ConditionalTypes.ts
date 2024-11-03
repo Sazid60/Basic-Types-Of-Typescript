@@ -15,6 +15,9 @@
 
     // car/bike/ship/ tractor ase ki na
     type CheckVehicle<T> = T extends keyof Sheikh ? true : false
+
+    // It checks if T (the input type) is a key of an object type called Sheikh
     
     type  HasBike = CheckVehicle<"bike">
+
 }
