@@ -304,12 +304,12 @@
     const getDisplayName = (name: string | null | undefined): string => {
         return name ?? 'Anonymous'; // Returns name if it's not null or undefined; otherwise returns 'Anonymous'
     };
-    
+
     // Example usage
     console.log(getDisplayName("Alice"));    // Output: Alice
     console.log(getDisplayName(null));       // Output: Anonymous
     console.log(getDisplayName(undefined));  // Output: Anonymous
-    
+
     // ---
 
     // ### Task 11: Unknown Type
@@ -321,6 +321,20 @@
     // - Write a function `processData(data: unknown)` that:
     //   - Checks if `data` is a string and returns the uppercased version.
     //   - If `data` is a number, returns the square of it.
+
+    const processData = (data: unknown): string | number | undefined => {
+        if (typeof data === "string") {
+            return data.toUpperCase(); // Return the uppercased string
+        } else if (typeof data === "number") {
+            return data * data; // Return the square of the number
+        }
+        return undefined; // Return undefined if data is neither a string nor a number
+    };
+
+    // Example usage
+    console.log(processData("hello")); // Output: HELLO
+    console.log(processData(4));        // Output: 16
+    console.log(processData(true));     // Output: undefined
 
     // ---
 
@@ -335,6 +349,10 @@
     //   - Throws an error with the given message.
     //   - Use the `never` return type to indicate that this function never returns.
 
+    const handleError = (message: string): never => {
+        throw new Error(message)
+    }
+    handleError("wow-error")
     // ---
 
     // ### Task 13: Generics with Functions and Interfaces
@@ -346,6 +364,29 @@
     // - Create a generic function that:
     //   - Accepts an array of any type.
     //   - Returns a new array with duplicate values removed.
+    // Generic function to remove duplicates from an array of any type
+    // Generic arrow function to remove duplicates from an array of any type
+
+    // Generic arrow function to remove duplicates from an array of any type using includes
+    const removeDuplicates = <T>(arr: T[]): T[] => {
+        const uniqueArray: T[] = [];
+        arr.forEach(item => {
+            if (!uniqueArray.includes(item)) {
+                uniqueArray.push(item);
+            }
+        });
+        return uniqueArray;
+    };
+
+    // Example usage
+    const numberArray = [1, 2, 3, 3, 4, 5, 6];
+    const uniqueNumbers = removeDuplicates(numberArray);
+    console.log(uniqueNumbers); // Output: [1, 2, 3, 4, 5, 6]
+
+    const stringArray = ["apple", "banana", "apple", "orange"];
+    const uniqueStrings = removeDuplicates(stringArray);
+    console.log(uniqueStrings); // Output: ["apple", "banana", "orange"]
+
 
     // ---
 
