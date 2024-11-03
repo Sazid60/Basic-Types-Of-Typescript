@@ -75,6 +75,38 @@
 
     // - Define a `Person` type alias with properties for `Name`, `Address`, `Hair and Eye Color`, `Income and Expense`, `Hobbies`, `Family Members`, `Job`, `Skills`, `Marital Status`, and `Friends`.
 
+    type Person = {
+        name: string;
+        address: string;
+        hairColor: string;
+        eyeColor: string; // Changed to camelCase
+        income: number;
+        expense: number;
+        hobbies: string[];
+        familyMembers: number; // Renamed for clarity
+        job: string;
+        skills: string[];
+        maritalStatus: 'single' | 'married' | 'divorced' | 'widowed'; // Optional refinement
+        friends: string[];
+    };
+    
+    const john: Person = {
+        name: "John Doe",
+        address: "123 Main St, Anytown, USA",
+        hairColor: "brown",
+        eyeColor: "blue",
+        income: 60000,
+        expense: 20000,
+        hobbies: ["reading", "hiking", "coding"],
+        familyMembers: 4,
+        job: "Software Developer",
+        skills: ["TypeScript", "JavaScript", "React"],
+        maritalStatus: "married",
+        friends: ["Alice", "Bob", "Charlie"]
+    };
+    
+    console.log(john);
+    
     // ---
 
     // ### Task 4: Union and Intersection Types
