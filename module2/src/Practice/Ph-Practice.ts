@@ -399,6 +399,27 @@
     // - Write an asynchronous function that:
     //   - Simulates fetching user data (containing `name` and `age`).
     //   - Returns the data after a short delay.
+    // Define a type alias for User data
+    type User5 = {
+        name: string;
+        age: number;
+    };
+
+    // Asynchronous function to simulate fetching user data
+    const fetchUserData = async (): Promise<User5> => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    name: "John Doe",
+                    age: 30
+                });
+            }, 1000); // Delay of 1 second
+        });
+    };
+
+    // Example usage
+    fetchUserData().then((user) => console.log(user));
+
 
     // ---
 
@@ -410,6 +431,24 @@
 
     // - Write a function `isString(value: unknown): value is string` that checks if a value is a string.
     // - Use this in another function `printUpperCase(value: unknown): void` that prints the value in uppercase if it’s a string.
+
+    // Custom type guard to check if a value is a string
+    const isString = (value: unknown): value is string => {
+        return typeof value === "string";
+    };
+
+    // Function that prints the value in uppercase if it's a string
+    function printUpperCase(value: unknown): void {
+        if (isString(value)) {
+            console.log(value.toUpperCase());
+        } else {
+            console.log("The value is not a string.");
+        }
+    }
+
+    // Example usage
+    printUpperCase("hello");  // Output: HELLO
+    printUpperCase(123);      // Output: The value is not a string.
 
     // ---
 
@@ -423,6 +462,25 @@
     //   - Takes an object and a key.
     //   - Returns the property value from the object based on the provided key.
     //   - Use `keyof` to constrain the key to valid properties of the object.
+
+    // Function to access object properties dynamically
+    function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+        return obj[key];
+    }
+
+    // Example usage
+    const person = {
+        name: "Alice",
+        age: 25,
+        city: "Wonderland"
+    };
+
+    // Valid keys based on the type of 'person'
+    console.log(getProperty(person, "name")); // Output: Alice
+    console.log(getProperty(person, "age"));  // Output: 25
+
+    // TypeScript will give an error if you try to access an invalid key
+    // console.log(getProperty(person, "country")); // Error: Argument of type '"country"' is not assignable to parameter of type '"name" | "age" | "city"'.
 
     // ---
 
