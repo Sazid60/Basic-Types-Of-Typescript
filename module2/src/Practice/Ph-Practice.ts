@@ -301,6 +301,15 @@
 
     // - Write a function `getDisplayName(name: string | null | undefined): string` that returns `"Anonymous"` if `name` is null or undefined.
 
+    const getDisplayName = (name: string | null | undefined): string => {
+        return name ?? 'Anonymous'; // Returns name if it's not null or undefined; otherwise returns 'Anonymous'
+    };
+    
+    // Example usage
+    console.log(getDisplayName("Alice"));    // Output: Alice
+    console.log(getDisplayName(null));       // Output: Anonymous
+    console.log(getDisplayName(undefined));  // Output: Anonymous
+    
     // ---
 
     // ### Task 11: Unknown Type
