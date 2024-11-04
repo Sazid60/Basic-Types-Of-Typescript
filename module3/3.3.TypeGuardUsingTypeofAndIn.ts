@@ -2,6 +2,8 @@
     // amra onek somoy guard diye check kore dekhi ekei bole type guard/narrowing
     // type guard funtion eo use kora jay object eo use kora jay
 
+    // functional programmin e type guard
+
     // type operator --> type guard
     type Alphanumeric = string | number;
     const add = (param1: Alphanumeric, param2: Alphanumeric): Alphanumeric => {
