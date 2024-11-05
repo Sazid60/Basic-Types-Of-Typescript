@@ -38,84 +38,43 @@ In TypeScript, "types" define the structure and type of data used in the code, e
 
 ## Common Types in TypeScript
 
-### 1. Basic Types
-- These are the primitive types, similar to JavaScript, but explicitly defined in TypeScript.
+### Primitive Types
 
-- **`string`**: For text data.
-  ```typescript
-  let name: string = "Alice";
-
-- **`number`**: For all numeric values, including integers and floating-point number 
+- 1. Number types 
 ```typescript
-  let age: number = 25;
-
-- **`boolean`**: For true or false values
+let roll : number = 123;
+```
+- 2. Boolean Types
 ```typescript
- let isActive: boolean = true;
-
-- **`null & undefined`**: For explicitly defined empty values
+let isAdmin : boolean = true;
+```
+- 3. Undefined & null Types
+ ```typescript
+let x: undefined = undefined;
+let y : null= null;
+```
+- 4. String Types 
 ```typescript
- let data: null = null;
- let notInitialized: undefined = undefined;
+let y : let firstName = 'sazid';
+```
 
+### Non-Primitive Types
 
+- 1. Array Types 
+```typescript
+let friends = ['sazid', 'maria'];
 
-## 2. Array Types
-- Arrays store a list of values of a specific type. There are two syntaxes to declare arrays:
+let koduFriends : string[] = ['fahim', 'Nadi'];
 
-type[] syntax
-Array<type> syntax
-let numbers: number[] = [1, 2, 3];
-let strings: Array<string> = ["one", "two", "three"];
-3. Tuple Types
-Tuples define arrays with fixed lengths and specific types for each position.
+let eligibleRollList: number[] = [1,2,3,4]
+```
+- 2. Tuple Types : Ita a special kind of array that maintains order
+```typescript
+let coordinate = [1,2]
 
-let person: [string, number] = ["Alice", 25];
-4. Enum Types
-Enums are used for defining a set of named constants, which can be used as a collection of related values.
+let coordinates :[number, number] = [1,15]
 
-enum Direction {
-  Up,
-  Down,
-  Left,
-  Right
-}
-let move: Direction = Direction.Up;
-5. Any Type
-The any type can hold values of any type, similar to regular JavaScript variables. This type disables type-checking, so it should be used sparingly.
+let info1 = [50, 'mr.x']
 
-let anything: any = "text";
-anything = 42; // No error
-6. Void Type
-The void type is used for functions that do not return a value.
-
-function logMessage(message: string): void {
-  console.log(message);
-}
-7. Union Types
-Union types allow a variable to hold values of multiple types.
-
-let value: string | number;
-value = "Hello";
-value = 42;
-8. Custom Types and Interfaces
-Custom types and interfaces help define complex object structures and allow reuse across the codebase.
-
-Type Alias
-typescript
-Copy code
-type Point = { x: number; y: number };
-let coordinates: Point = { x: 10, y: 20 };
-Interface
-typescript
-Copy code
-interface Person {
-  name: string;
-  age: number;
-}
-let user: Person = { name: "Alice", age: 25 };
-9. Literal Types
-Literal types define a variable with specific, fixed values, rather than general types.
-
-let direction: "left" | "right" | "up" | "down";
-direction = "left";
+let info : [number, string]= [50, 'mr.x']
+```
