@@ -78,3 +78,19 @@ let info1 = [50, 'mr.x']
 
 let info : [number, string]= [50, 'mr.x']
 ```
+
+- 3. Objects Types
+```typescript
+
+const user: {
+    company : "Programming Hero"  // literal types
+    firstName: string;
+    middleName?: string; // optional types
+    lastName: string;
+} = {
+    company: "Programming Hero",
+    firstName: 'Shahnawaz',
+    lastName: "Sazid"
+}
+```
+

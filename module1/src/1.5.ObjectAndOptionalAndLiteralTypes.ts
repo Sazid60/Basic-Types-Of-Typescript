@@ -64,3 +64,5 @@ const user4: {
 
 // user4.company = "PH"
 // eta korle error dibe since its not assignable
+
+
