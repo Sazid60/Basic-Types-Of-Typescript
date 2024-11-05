@@ -94,3 +94,25 @@ const user: {
 }
 ```
 
+- 4. Function Types
+```typescript
+//  Normal Function               
+                              // default value
+function add2(num1: number, num2: number = 10): number {
+    return num1 + num2;
+}
+add(2, 10)
+
+// Arrow Function 
+const addArrow = (num1: number, num2: number): number => num1 + num2;
+addArrow(20,39)
+
+// methods
+const poorUser = {
+    name: "Sazid",
+    balance: 0,
+    addBalance(balance: number): string {
+        return `My New Balance : ${this.balance + balance}`
+    }
+}
+```
