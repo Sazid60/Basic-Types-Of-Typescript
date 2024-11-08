@@ -42,7 +42,7 @@
     // abstract class k leader class bole [emon akta class banabo jeta re bakli class follow korbe]
 
     // abstract class ami follow korte parbo but tar theke toiri korte parbo na 
-    // abstract class theke instanxce toiri hoy na 
+    // abstract class theke instance toiri hoy na 
     // follow korte hoile extends use korte hobe 
 
     abstract class Car2 {
@@ -66,5 +66,10 @@
         }
     }
     // const hondCar = new Car2()
-    // hondCar.startEngine()
+    // hondCar.startEngine() // cant do this 
+
+    // we can do this
+    const hondCar2 = new ToyotaCar()
+    hondCar2.startEngine()
+
 }

@@ -39,4 +39,7 @@
     goribAccount.addDeposit(20)
     const myBalance = goribAccount.getBalance();
     console.log(myBalance)
+    
+    const goribAccount1 = new StudentAccount(111, "Goribs", 20)
+    goribAccount1.getBalance()
 }
