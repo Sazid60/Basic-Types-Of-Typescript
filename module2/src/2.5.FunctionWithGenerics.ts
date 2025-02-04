@@ -1,68 +1,78 @@
 {
-    // Normal Function
-    const createArray = (param : string) :string[] =>{
-        return [param]
-    }
+  // Normal Function
+  const createArray = (param: string): string[] => {
+    return [param];
+  };
 
-    const res1 = createArray('Bangladesh')
+  const res1 = createArray("Bangladesh");
 
-    // using generics
-    const createArrayWithGeneric = <T>(param : T) : T[] =>{
-        return[param]
-    } 
+  // using generics
+  const createArrayWithGeneric = <T>(param: T): T[] => {
+    return [param];
+  };
 
-    const res2 = createArrayWithGeneric<string>('Bangladesh')
+  const res2 = createArrayWithGeneric<string>("Bangladesh");
 
-    type User = {
-        id:number;
-        name: string;
-    }
-    const res3 = createArrayWithGeneric<User>({id:123, name:'sazid'})
+  type User = {
+    id: number;
+    name: string;
+  };
+  const res3 = createArrayWithGeneric<User>({ id: 123, name: "sazid" });
 
+  // generics with Tuple
 
+  const createArrayWithGenericTuple = <T, Q>(param1: T, param2: Q): [T, Q] => {
+    return [param1, param2];
+  };
 
-    // generics with Tuple
+  const res4 = createArrayWithGenericTuple<string, number>("Bangladesh", 123);
 
-    const createArrayWithGenericTuple = <T, Q>(param1 : T, param2:Q) : [T, Q] =>{
-        return[param1, param2]
-    } 
+  type User1 = {
+    id: number;
+    name: string;
+  };
+  const res5 = createArrayWithGenericTuple<string, User1>("Bangladesh", {
+    id: 123,
+    name: "sazid",
+  });
 
-    const res4 = createArrayWithGenericTuple <string, number>('Bangladesh', 123)
+  // adding something new to an object
+  const addCourseToStudent = <T>(student: T) => {
+    const course: string = "Next Level Web Dev";
 
-    type User1 = {
-        id:number;
-        name: string;
-    }
-    const res5 = createArrayWithGenericTuple <string,User>('Bangladesh', {id:123, name:'sazid'})
+    return {
+      ...student,
+      course,
+    };
+  };
 
+  interface Student {
+    id: number;
+    name: string;
+    email: string;
+    devType: string;
+  }
 
-    // adding something new to an object
-    const addCourseToStudent = <T>(student :T)=>{
-        const course :string = "Next Level Web Dev"
+  const student1 = addCourseToStudent<Student>({
+    id: 123,
+    name: "Mr X",
+    email: "x@gmail.com",
+    devType: "new",
+  });
 
-        return {
-            ... student, 
-            course
-        }
-    } 
+  interface Student1 {
+    id: number;
+    name: string;
+    email: string;
+    devType: string;
+    hasWatch: boolean;
+  }
 
-    interface Student {
-        id:number;
-        name:string;
-        email:string;
-        devType:string
-    }
-    
-    const student1 = addCourseToStudent<Student>({id:123,name: 'Mr X', email:'x@gmail.com', devType:'new'})
-
-    interface Student1 {
-        id:number;
-        name:string;
-        email:string;
-        devType:string;
-        hasWatch : boolean;
-    }
-
-    const student2 = addCourseToStudent<Student1>({id:123,name: 'Mr X', email:'x@gmail.com', devType:'new', hasWatch:true})
-
+  const student2 = addCourseToStudent<Student1>({
+    id: 123,
+    name: "Mr X",
+    email: "x@gmail.com",
+    devType: "new",
+    hasWatch: true,
+  });
 }

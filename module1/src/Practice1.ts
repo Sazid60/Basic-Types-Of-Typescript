@@ -1,91 +1,92 @@
 {
+  // 1. Task: Create a Person object with properties for name (string), age (number), and isStudent (boolean).
+  const person: {
+    name: string;
+    age: number;
+    isStudent: boolean;
+  } = {
+    name: "sazid",
+    age: 25,
+    isStudent: true,
+  };
 
-    // 1. Task: Create a Person object with properties for name (string), age (number), and isStudent (boolean).
-    const person: {
-        name: string,
-        age: number,
-        isStudent: boolean,
-    } = {
-        name: "sazid",
-        age: 25,
-        isStudent: true,
-    }
+  // 2. Task: Create an array of strings called favoriteFoods containing at least three food items.
+  // Bonus: Create an array of numbers called scores and populate it with five numbers.
 
-    // 2. Task: Create an array of strings called favoriteFoods containing at least three food items.
-    // Bonus: Create an array of numbers called scores and populate it with five numbers.
+  const favoriteFoods: string[] = ["mango", "malta", "apple"];
+  const scores: number[] = [1, 2, 3, 4, 5];
 
-    const favoriteFoods: string[] = ['mango', 'malta', 'apple']
-    const scores: number[] = [1, 2, 3, 4, 5]
+  // 3. Task: Create a tuple called book to represent a book with its title (string), author (string), and publicationYear (number).
 
-    // 3. Task: Create a tuple called book to represent a book with its title (string), author (string), and publicationYear (number).
+  const book: [string, string, number] = ["Subtle art", "Sazid", 2024];
 
-    const book: [string, string, number] = ['Subtle art', 'Sazid', 2024]
+  // 4. Task: Create a variable called userId that can be either a number or a string. Assign both a number and a string to it to test.
 
-    // 4. Task: Create a variable called userId that can be either a number or a string. Assign both a number and a string to it to test.
+  type UserId = string | number;
 
-    type UserId = string | number;
+  const userId: UserId = "1234";
 
-    const userId: UserId = "1234"
+  // 5. Task: Create a type alias called Coordinates that represents an object with latitude and longitude as numbers. Then create a variable of type Coordinates and assign it appropriate values.
 
-    // 5. Task: Create a type alias called Coordinates that represents an object with latitude and longitude as numbers. Then create a variable of type Coordinates and assign it appropriate values.
+  type Coordinates = {
+    latitude: number;
+    longitude: number;
+  };
 
-    type Coordinates = {
-        latitude: number;
-        longitude: number;
-    }
+  const coordinates: Coordinates = {
+    latitude: 12,
+    longitude: 14,
+  };
 
-    const coordinates: Coordinates = {
-        latitude: 12,
-        longitude: 14,
-    }
+  // 6. Task: Define an object type for Car with properties make (string), model (string), year (number), and isElectric (boolean). Create a variable of type Car and assign values to it.
 
-    // 6. Task: Define an object type for Car with properties make (string), model (string), year (number), and isElectric (boolean). Create a variable of type Car and assign values to it.
+  type Car = {
+    make: string;
+    model: string;
+    year: number;
+    isElectric: boolean;
+  };
 
-    type Car = {
-        make: string;
-        model: string;
-        year: number;
-        isElectric: boolean;
-    }
+  const car: Car = {
+    make: "Jappan",
+    model: "Toyotta",
+    year: 2024,
+    isElectric: true,
+  };
 
-    const car: Car = {
-        make: "Jappan",
-        model: "Toyotta",
-        year: 2024,
-        isElectric: true
-    }
+  // 7. Task: Create a function called add that takes two parameters, a and b, both of type number, and returns their sum.
+  // Bonus: Create a function called introduce that takes a Person object (from task 1) as a parameter and returns a string introducing the person by name and age.
 
-    // 7. Task: Create a function called add that takes two parameters, a and b, both of type number, and returns their sum.
-    // Bonus: Create a function called introduce that takes a Person object (from task 1) as a parameter and returns a string introducing the person by name and age.
+  const add = (a: number, b: number) => {
+    return a + b;
+  };
 
-    const add = (a: number, b: number) => {
-        return a + b
-    }
+  const introduce = (person: {
+    name: string;
+    age: number;
+    isStudent: boolean;
+  }) => {
+    return `Hi, my name is ${person.name} and I am ${person.age} years old.`;
+  };
 
-    const introduce = (person: { name: string; age: number; isStudent: boolean }) => {
-        return `Hi, my name is ${person.name} and I am ${person.age} years old.`;
-    };
+  introduce(person);
 
-    introduce(person)
+  // 8.Task: Create two types, User with properties username (string) and email (string), and Admin with an additional property isAdmin (boolean). Then create a type that combines User and Admin to represent an admin user. Create a variable of this combined type and assign appropriate values.
 
+  type User = {
+    userName: string;
+    email: string;
+  };
 
-    // 8.Task: Create two types, User with properties username (string) and email (string), and Admin with an additional property isAdmin (boolean). Then create a type that combines User and Admin to represent an admin user. Create a variable of this combined type and assign appropriate values.
+  type Admin = {
+    isAdmin: boolean;
+  };
 
-    type User = {
-        userName:string;
-        email : string;
-    }
+  type UserType = User & Admin;
 
-    type Admin = {
-        isAdmin : boolean;
-    }
-
-    type UserType = User & Admin;
-
-    const user : UserType = {
-        userName : "sazid",
-        email : "sazid@gmail.cm",
-        isAdmin : false
-    }
+  const user: UserType = {
+    userName: "sazid",
+    email: "sazid@gmail.cm",
+    isAdmin: false,
+  };
 }
-

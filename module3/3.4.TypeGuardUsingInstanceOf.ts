@@ -1,5 +1,6 @@
 {
     // oop te type guard
+
     // instance of guard
     class Animal {
         name:string;
@@ -36,6 +37,8 @@
     const isDog = (animal :Animal): animal is Dog =>{
         return animal instanceof Dog
         // true/false return korbe
+
+        // animal is Dog is the type predicate, which indicates that if the function returns true, TypeScript should consider animal to be of type Dog within any code that relies on this check.
     }
 
     const isCat = (animal :Animal) : animal is Cat =>{
@@ -65,9 +68,9 @@
     }
 
     const dog = new Dog("Dog Bhai", "dog")
-    dog.makeBark()
+    // dog.makeBark()
     const cat = new Cat("Cat Bhai", "Cat")
-    cat.makeMeaw()
+    // cat.makeMeaw()
 
     getAnimal(dog)
 }
