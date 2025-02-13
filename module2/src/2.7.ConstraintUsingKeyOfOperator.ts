@@ -14,6 +14,7 @@
   type Owner2 = keyof Vehicle;
 
   const person1: Owner2 = "ship";
+  const person3: Owner2 = "car";
   // dekhbo auto suggestion ditye dise
 
   // another example
