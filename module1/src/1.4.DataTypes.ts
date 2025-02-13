@@ -66,3 +66,5 @@ let info: [number, string] = [50, "mr.x"];
 let info2: [number, string, boolean] = [50, "mr.x", true];
 
 // tuple modify kora jay na regular niom e since its fixed
+
+
